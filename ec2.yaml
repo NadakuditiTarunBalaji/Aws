@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS CloudFormation Template for EC2 instance'
+Metadata:
+  License: Apache-2.0
+  Name: ec2.yaml
+  Author: 'Tarun'
+  Date: '2025-03-23'
+Type: 'AWS::EC2::Instance'
+Properties:
+  Name: 'EC2Instance01'
+  ImageId: 'ami-084568db4383264d4'
+  InstanceType: 't2.micro'
+  KeyName: 'new_key'
+  SecurityGroups:
+    - 'sg-0efaf36ae6c65c448'
+  Tags:
+    - Key: Name
+      Value: 'EC2Instance'
