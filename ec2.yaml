@@ -1,7 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'AWS CloudFormation Template for EC2 instance'
 Metadata:
-  License: Apache-2.0
   Name: ec2.yaml
   Author: 'Tarun'
   Date: '2025-03-23'
