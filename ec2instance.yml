@@ -1,0 +1,31 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS::EC2::Instance'
+Metadata::
+  Name: "ec2instance.yml"
+  Date: '2025-03-29'
+  Author: "Tarun"
+Resources:
+  EC2Instance:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      ImageId: 'ami-084568db4383264d4'
+      InstanceType: 't2.micro'
+      KeyName: 'new_key''
+      VpcId: 'vpc-031233929013b8e88'
+      SecurityGroupIds:
+        - 'sg-0efaf36ae6c65c448'
+      AvailabilityZone: 'us-east-1a'
+      Tags:
+        - Key: 'Name'
+          Value: 'my-ec2-instance'
+      UserData:
+        Fn::Base64: |
+          #!/bin/bash
+          yum update -y
+          yum install -y httpd
+          systemctl start httpd
+          systemctl enable httpd
+          echo "<h1>Hello from EC2 instance</h1>" > /var/www/html/index.html
+          echo "Date: $(date)" >> /var/www/html/index.html
+          echo "Hostname: $(hostname -f)" >> /var/www/html/index.html
+          
