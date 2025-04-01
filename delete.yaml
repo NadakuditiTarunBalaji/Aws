@@ -1,0 +1,14 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'AWS CloudFormation Template for deleting an EC2 instance'
+Metadata:
+  Name: ec2instance_delete.yaml
+Resources:
+  EC2InstanceDelete:
+    Type: 'AWS::EC2::Instance'
+    Properties:
+      InstanceId: 'i-0e7fc6161eaab18f9'  # Replace with your instance ID
+      Action: 'terminate'  # Action to delete the instance
+      Region: 'us-east-1'  # Specify the region where the instance is located
+      Tags:
+        - Key: Name
+          Value: 'EC2InstanceDelete'

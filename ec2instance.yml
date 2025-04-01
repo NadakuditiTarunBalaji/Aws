@@ -1,6 +1,6 @@
 AWSTemplateFormatVersion: '2010-09-09'
 Description: 'AWS::EC2::Instance'
-Metadata::
+Metadata:
   Name: "ec2instance.yml"
   Date: '2025-03-29'
   Author: "Tarun"
@@ -10,10 +10,10 @@ Resources:
     Properties:
       ImageId: 'ami-084568db4383264d4'
       InstanceType: 't2.micro'
-      KeyName: 'new_key''
-      VpcId: 'vpc-031233929013b8e88'
+      KeyName: 'new_key'
+      VpcId: vpc-09c9bab2c1f009eee
       SecurityGroupIds:
-        - 'sg-0efaf36ae6c65c448'
+        - 'sg-0653a99356f2821f3'
       AvailabilityZone: 'us-east-1a'
       Tags:
         - Key: 'Name'
